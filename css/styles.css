@@ -1,26 +1,13 @@
-<<<<<<< HEAD
-
-:root {
-  /* Variables de tema: colores, tipografías y medidas reutilizables */
-=======
+﻿
 /* ESTILOS GLOBALES Y VARIABLES */
 :root {
   /* Colores base */
->>>>>>> 9942fca (Initial commit: project files)
   --charcoal: #2c2c2c;
   --slate: #4a4a4a;
   --silver: #cfcfcf;
   --wood-accent: #a67c52;
   --white: #ffffff;
-<<<<<<< HEAD
-  --text-dark: #333333;
-  --text-light: #f5f5f5;
-  --esp: 1rem;
-  --max-w: 960px;
-  }
 
-/* Reset de box-sizing para un layout predecible */
-=======
   
   /* Medidas */
   --esp: 1rem;
@@ -54,7 +41,7 @@
   --bg-secondary: #2a2a2a;
   --bg-tertiary: #3a3a3a;
   
-  /* Dark Theme - Textos claros con tono cálido */
+  /* Dark Theme - Textos claros con tono cÃ¡lido */
   --text-primary: #f5f5f5;
   --text-secondary: #d0d0d0;
   --text-dark: #f5f5f5;
@@ -70,7 +57,7 @@
   --silver: #6a6a6a;
   --white: #1a1a1a;
   
-  /* Dark Theme - Acentos industriales más brillantes */
+  /* Dark Theme - Acentos industriales mÃ¡s brillantes */
   --accent-rust: #d9854f;
   --accent-wood: #9d7d52;
   --accent-steel: #8a9ba8;
@@ -82,7 +69,7 @@
     color: var(--text-primary);
 }
 
-/* Mejoras visuales para elementos específicos en tema oscuro */
+/* Mejoras visuales para elementos especÃ­ficos en tema oscuro */
 .dark-theme a {
     color: var(--accent-rust);
 }
@@ -92,16 +79,14 @@
 }
 
 /* Box sizing global */
->>>>>>> 9942fca (Initial commit: project files)
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-=======
-/* Tipografía y fondo global del sitio */
+
+/* TipografÃ­a y fondo global del sitio */
 html {
   margin: 0;
   padding: 0;
@@ -123,14 +108,14 @@ body {
   flex-direction: column;
 }
 
-/* Contenedor ancho máximo reutilizable */
+/* Contenedor ancho mÃ¡ximo reutilizable */
 .holder {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 var(--esp);
 }
 
-/* Contenedor principal de la aplicación */
+/* Contenedor principal de la aplicaciÃ³n */
 .App {
   min-height: 100vh;
   display: flex;
@@ -142,8 +127,7 @@ body {
   flex: 1 0 auto;
 }
 
->>>>>>> 9942fca (Initial commit: project files)
-/* Mejora de UX en móviles: quitar destello/tap highlight y outlines en enlaces/botones del menú */
+/* Mejora de UX en mÃ³viles: quitar destello/tap highlight y outlines en enlaces/botones del menÃº */
 button,
 a,
 .nav-menu li a {
@@ -158,56 +142,8 @@ a:focus,
   box-shadow: none;
 }
 
-<<<<<<< HEAD
-.nav-menu li a {
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
-  touch-action: manipulation;
-}
 
-.nav-menu li a:focus {
-  background: none;
-  outline: none;
-}
-
-/* Tipografía y fondo global del sitio */
-body {
-  margin: 0;
-  font: 400 1rem/1.5 'Open Sans', sans-serif;
-  color: var(--text-dark);
-  background: var(--white);
-  opacity: 1;
-  transition: opacity 0.25s ease;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Tamaño del logotipo en el header */
-.img-logo {
-  max-width: 80px;
-  height: auto;
-}
-
-
-/* Encabezado fijo con logo y título */
-header {
-  background-color: var(--charcoal);
-  padding: 8px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1001;
-}
-
-header .holder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-=======
-/* Transiciones comunes para enlaces de menú y botones */
+/* Transiciones comunes para enlaces de menÃº y botones */
 .nav-menu li a,
 .btn,
 .btn-enviar {
@@ -231,13 +167,13 @@ header .holder {
 }
 
 /* =========HEADER========== */
-/* Tamaño del logotipo en el header */
+/* TamaÃ±o del logotipo en el header */
 .img-logo {
   max-width: 50px;
   height: auto;
 }
 
-/* Encabezado con logo y título - Sticky siempre visible */
+/* Encabezado con logo y tÃ­tulo - Sticky siempre visible */
 header {
   background-color: var(--charcoal);
   padding: 1rem 0;
@@ -267,24 +203,11 @@ header {
   align-items: center;
   gap: 0.8rem;
   flex-shrink: 0;
->>>>>>> 9942fca (Initial commit: project files)
 }
 
 header h1 {
   color: var(--text-light);
-<<<<<<< HEAD
-  font-size: 1.5rem;
-  font-weight: 100;
-  font-style: italic;
-  margin: 0 0 0 0.5rem;
-}
 
-/* Barra de navegación principal (contenedor) */
-nav {
-  background-color: var(--slate);
-  margin-bottom: var(--esp);
-  position: relative;
-=======
   font-size: 1.2rem;
   font-weight: 600;
   font-style: normal;
@@ -306,7 +229,7 @@ nav {
   color: var(--text-primary);
 }
 
-/* Responsive - Pantallas pequeñas */
+/* Responsive - Pantallas pequeÃ±as */
 @media (max-width: 768px) {
   .img-logo {
     max-width: 45px;
@@ -349,7 +272,7 @@ nav {
 }
 
 /* =============NAV============ */
-/* Backdrop/Overlay menú abierto */
+/* Backdrop/Overlay menÃº abierto */
 .nav-backdrop {
   position: fixed;
   top: 0;
@@ -378,7 +301,7 @@ nav {
   pointer-events: auto;
 }
 
-/* Desactivar todos los hovers y pointer-events cuando el menú está abierto */
+/* Desactivar todos los hovers y pointer-events cuando el menÃº estÃ¡ abierto */
 body.nav-menu-open * {
   pointer-events: none !important;
 }
@@ -398,7 +321,7 @@ body.nav-menu-open .nav-backdrop {
   }
 }
 
-/* Barra de navegación integrada en el header */
+/* Barra de navegaciÃ³n integrada en el header */
 nav {
   background-color: transparent;
   margin-bottom: 0;
@@ -425,35 +348,11 @@ nav.nav-sticky-top {
 .dark-theme nav.nav-sticky-top {
   box-shadow: none;
   background-color: transparent;
->>>>>>> 9942fca (Initial commit: project files)
 }
 
 /* Contenedor centrado y responsive del nav */
 .nav-container {
-<<<<<<< HEAD
-  max-width: var(--max-w);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1rem;
-  min-height: 3rem;
-}
 
-/* Botón hamburguesa (abre/cierra el menú en móvil) */
-.nav-toggle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 24px;
-  background-color: var(--wood-accent);
-  padding: 4px;
-=======
   max-width: 100%;
   margin: 0;
   display: flex;
@@ -465,7 +364,7 @@ nav.nav-sticky-top {
   position: relative;
 }
 
-/* Botón hamburguesa (abre/cierra el menú en móvil) - Lado derecho */
+/* BotÃ³n hamburguesa (abre/cierra el menÃº en mÃ³vil) - Lado derecho */
 .nav-toggle {
   position: absolute;
   right: 1rem;
@@ -480,7 +379,6 @@ nav.nav-sticky-top {
   height: 32px;
   background-color: var(--wood-accent);
   padding: 6px;
->>>>>>> 9942fca (Initial commit: project files)
   border-radius: 4px;
   border: 1px solid var(--text-light);
   cursor: pointer;
@@ -489,23 +387,13 @@ nav.nav-sticky-top {
 }
 
 .nav-toggle span {
-<<<<<<< HEAD
-  width: 100%;
-  height: 3px;
-  background: var(--text-light);
-  border-radius: 2px;
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease,
-    background 0.3s ease;
-=======
+
   width: 20px;
   height: 2px;
   background: var(--text-light);
   border-radius: 2px;
   display: block;
   transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
->>>>>>> 9942fca (Initial commit: project files)
 }
 
 .nav-toggle:hover {
@@ -516,7 +404,7 @@ nav.nav-sticky-top {
   background: var(--charcoal);
 }
 
-/* Estado "open": convierte el ícono hamburguesa en una "X" */
+/* Estado "open": convierte el Ã­cono hamburguesa en una "X" */
 .nav-toggle.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -537,15 +425,12 @@ nav.nav-sticky-top {
   background: var(--charcoal);
 }
 
-/* Menú desplegable (cerrado por defecto en móvil) */
+/* MenÃº desplegable (cerrado por defecto en mÃ³vil) */
 .nav-menu {
   list-style: none;
   margin: 0;
-<<<<<<< HEAD
-  padding: 0;
-=======
+
   padding: 0rem;
->>>>>>> 9942fca (Initial commit: project files)
   max-height: 0;
   opacity: 0;
   transform: translateY(-10px);
@@ -555,18 +440,12 @@ nav.nav-sticky-top {
   top: 100%;
   left: 0;
   right: 0;
-<<<<<<< HEAD
-  transition:
-    max-height 0.3s ease,
-    opacity 0.3s ease,
-    transform 0.3s ease;
-=======
+
   transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
->>>>>>> 9942fca (Initial commit: project files)
   z-index: 500;
 }
 
-/* Menú visible (estado abierto) */
+/* MenÃº visible (estado abierto) */
 .nav-menu--visible {
   max-height: 500px;
   opacity: 1;
@@ -598,7 +477,7 @@ nav.nav-sticky-top {
   animation-delay: 0.25s;
 }
 
-/* Animación de aparición progresiva para ítems de navegación */
+/* AnimaciÃ³n de apariciÃ³n progresiva para Ã­tems de navegaciÃ³n */
 @keyframes navLinkFade {
   to {
     opacity: 1;
@@ -608,23 +487,13 @@ nav.nav-sticky-top {
 
 .nav-menu li a {
   display: block;
-<<<<<<< HEAD
-  padding: 1rem;
-=======
+
   padding: 0.5rem 1.2rem;
->>>>>>> 9942fca (Initial commit: project files)
   text-align: center;
   color: var(--text-light);
   text-decoration: none;
   position: relative;
-<<<<<<< HEAD
-  overflow: hidden;
-  transition: background 0.3s;
-}
 
-.nav-menu li a::after {
-  content: '';
-=======
   overflow: visible;
   transition: background 0.3s, color 0.3s, transform 0.2s;
   border-radius: 6px;
@@ -638,7 +507,7 @@ nav.nav-sticky-top {
   transform: translateY(-2px);
 }
 
-/* Tema oscuro para enlaces del menú */
+/* Tema oscuro para enlaces del menÃº */
 .dark-theme .nav-menu li a {
   color: var(--text-primary);
   background: none;
@@ -666,7 +535,7 @@ nav.nav-sticky-top {
   background-color: var(--accent-fire);
 }
 
-/* Estilo activo más visible - solo con línea */
+/* Estilo activo mÃ¡s visible - solo con lÃ­nea */
 .nav-menu li a.active,
 .nav-menu li a.activo {
   color: var(--wood-accent);
@@ -678,55 +547,39 @@ nav.nav-sticky-top {
   color: var(--accent-rust);
 }
 
-/* Línea decorativa bajo los enlaces */
+/* LÃ­nea decorativa bajo los enlaces */
 .nav-menu li a::after {
   content: "";
->>>>>>> 9942fca (Initial commit: project files)
   position: absolute;
   bottom: 0;
   left: 50%;
   width: 0;
-<<<<<<< HEAD
-  height: 2px;
-=======
+
   height: 1px;
->>>>>>> 9942fca (Initial commit: project files)
   background: var(--wood-accent);
   transition: width 0.3s ease, left 0.3s ease;
 }
 
-<<<<<<< HEAD
-.nav-menu li a:hover::after,
-.nav-menu li a.activo::after {
-=======
+
 .nav-menu li a:hover::after {
->>>>>>> 9942fca (Initial commit: project files)
   left: 0;
   width: 100%;
 }
 
-<<<<<<< HEAD
-/* Contenedor ancho máximo reutilizable */
-.holder {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 var(--esp);
-}
 
-=======
-/* Línea visible en página activa */
+/* LÃ­nea visible en pÃ¡gina activa */
 .nav-menu li a.active::after,
 .nav-menu li a.activo::after {
   left: 0 !important;
   width: 100% !important;
 }
 
-/* Color de línea en tema oscuro */
+/* Color de lÃ­nea en tema oscuro */
 .dark-theme .nav-menu li a::after {
   background: var(--accent-rust);
 }
 
-/* Navegación de escritorio: menú siempre visible y centrado */
+/* NavegaciÃ³n de escritorio: menÃº siempre visible y centrado */
 @media (min-width: 769px) {
   .nav-toggle {
     display: none;
@@ -766,12 +619,12 @@ nav.nav-sticky-top {
   }
 }
 
-/* Transiciones comunes para enlaces de menú y botones */
+/* Transiciones comunes para enlaces de menÃº y botones */
 .nav-menu li a {
   display: inline-block;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
-/* Navegación móvil y ajustes de columnas en pantallas pequeñas */
+/* NavegaciÃ³n mÃ³vil y ajustes de columnas en pantallas pequeÃ±as */
 @media (max-width: 768px) {
   nav {
     margin-bottom: 0;
@@ -838,7 +691,7 @@ nav.nav-sticky-top {
     border-radius: 0;
   }
 
-  /* Estilos para link activo en móvil */
+  /* Estilos para link activo en mÃ³vil */
   .nav-menu li a.activo,
   .nav-menu li a.active {
     background-color: rgba(255, 255, 255, 0.15) !important;
@@ -857,7 +710,7 @@ nav.nav-sticky-top {
   }
 }
 
-/* Pantallas muy pequeñas */
+/* Pantallas muy pequeÃ±as */
 @media (max-width: 480px) {
   .nav-container {
     padding: 0.8rem;
@@ -947,14 +800,14 @@ nav.nav-sticky-top {
 /* Responsive */
 @media (max-width: 768px) {
   .theme-toggle {
-    display: none;  /* Ocultar en móviles para que el menú quede centrado */
+    display: none;  /* Ocultar en mÃ³viles para que el menÃº quede centrado */
   }
 }
 
 
 
 /* =========FOOTER========== */
-/* Pie de página sencillo con contraste alto */
+/* Pie de pÃ¡gina sencillo con contraste alto */
 footer {
   background-color: var(--charcoal);
   text-align: center;
@@ -962,7 +815,7 @@ footer {
   color: var(--text-light);
   margin-top: calc(var(--esp) * 2);
 }
-/* Botón flotante para volver arriba */
+/* BotÃ³n flotante para volver arriba */
 #scroll-top {
   position: fixed;
   right: 1rem;
@@ -1024,15 +877,13 @@ footer {
 
 
 /* ==========HOME=========== */
->>>>>>> 9942fca (Initial commit: project files)
 h2 {
   color: var(--charcoal);
   font-weight: 400;
   margin-top: var(--esp);
 }
 
-<<<<<<< HEAD
-=======
+
 /* Mejora de contraste en tema oscuro */
 .dark-theme h2 {
   color: var(--text-primary);
@@ -1044,8 +895,7 @@ h2 {
   color: var(--text-secondary);
 }
 
->>>>>>> 9942fca (Initial commit: project files)
-/* Sección de beneficios (tarjetas con iconos y texto) */
+/* SecciÃ³n de beneficios (tarjetas con iconos y texto) */
 .beneficios {
   display: flex;
   justify-content: center;
@@ -1065,9 +915,7 @@ h2 {
   padding: 1.5rem 1rem 1.2rem 1rem;
   box-shadow: 0 3px 12px #2c2c2c08;
   text-align: center;
-<<<<<<< HEAD
-  transition: box-shadow .18s, transform .18s;
-=======
+
   transition: box-shadow 0.18s, transform 0.18s;
 }
 
@@ -1079,7 +927,6 @@ h2 {
 .dark-theme .beneficio {
   background: var(--bg-secondary);
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
->>>>>>> 9942fca (Initial commit: project files)
 }
 
 .beneficio .icon-material,
@@ -1094,7 +941,7 @@ h2 {
   background-repeat: no-repeat;
 }
 
-/* Iconos embebidos vía data-URI SVG para beneficios */
+/* Iconos embebidos vÃ­a data-URI SVG para beneficios */
 .icon-material {
   background-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="black" stroke-width="2" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="10" width="24" height="14" rx="3" fill="%23a67c52" stroke="black"/><rect x="8" y="6" width="16" height="4" rx="1.5" fill="%23cfcfcf" stroke="black"/></svg>');
 }
@@ -1122,428 +969,7 @@ h2 {
   font-size: 0.98em;
 }
 
-<<<<<<< HEAD
-/* Galería de imágenes en grid con efecto de aparición al entrar en viewport */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.1rem;
-  margin-top: 2.2rem;
-  margin-bottom: 2.2rem;
-  justify-items: center;
-  align-items: stretch;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s cubic-bezier(.21, .61, .35, 1), transform 0.7s cubic-bezier(.21, .61, .35, 1);
-}
 
-.galeria.visible {
-  opacity: 1;
-  transform: none;
-}
-
-.galeria img {
-  width: 100%;
-  max-width: 330px;
-  aspect-ratio: 1/1;
-  border-radius: 16px;
-  border: 1.5px solid var(--silver);
-  background: #fafafc;
-  box-shadow: 0 3px 24px #2c2c2c15;
-  transition: transform 0.22s cubic-bezier(.25, .8, .25, 1), box-shadow 0.18s, border-color 0.18s;
-  cursor: pointer;
-  object-fit: cover;
-  --rotate-angle: -1deg;
-}
-
-.galeria img:hover,
-.galeria img:focus {
-  transform: scale(1.07) rotate(var(--rotate-angle));
-  border-color: var(--wood-accent);
-  box-shadow: 0 8px 36px #a67c5225;
-  z-index: 2;
-}
-
-/* Responsive: galería en 2 columnas en tablets/chico */
-@media (max-width: 900px) {
-  .galeria {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.6rem;
-  }
-}
-
-/* Responsive: galería en 1 columna en móviles pequeños */
-@media (max-width: 480px) {
-  .galeria {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Sección de contacto: formulario + datos + mapa */
-.contacto {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.2rem;
-  margin-top: 2.2rem;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-/* Tarjeta contenedora del formulario */
-.form-container {
-  background: var(--white);
-  border-radius: 16px;
-  box-shadow: 0 8px 36px #2c2c2c18, 0 2px 8px #a67c5230;
-  padding: 2.2rem 2.5rem 2.1rem 2.5rem;
-  min-width: 320px;
-  max-width: 440px;
-  margin: 0 auto;
-  flex: 1;
-  transition: box-shadow 0.2s;
-}
-
-.form-container:hover {
-  box-shadow: 0 12px 48px #2c2c2c22, 0 2.5px 12px #a67c5245;
-}
-
-/* Mensaje introductorio del formulario */
-.mensaje-bienvenida {
-  color: var(--slate);
-  background: #f8f5f2;
-  border-left: 4px solid var(--wood-accent);
-  border-radius: 8px;
-  padding: 0.9em 1.1em;
-  font-size: 1.07em;
-  margin-bottom: 1.3em;
-}
-
-.formulario label .icon {
-  font-size: 1.12em;
-  margin-right: 0.36em;
-  vertical-align: middle;
-}
-
-.formulario .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1em;
-  margin-bottom: 0.7em;
-}
-
-/* Campos de entrada y textarea del formulario */
-.formulario input,
-.formulario textarea {
-  box-sizing: border-box;
-  width: 100%;
-  border-radius: 7px;
-  border: 1.5px solid var(--silver);
-  padding: 0.6em 1em;
-  background: #fafafc;
-  margin-bottom: 0.2em;
-  font-size: 1em;
-  resize: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.formulario input:focus,
-.formulario textarea:focus {
-  border-color: var(--wood-accent);
-  box-shadow: 0 0 0 2px #a67c5233;
-  outline: none;
-}
-
-/* Botón enviar del formulario y estilos de hover/focus */
-.btn-enviar,
-.formulario button[type="submit"] {
-  background: linear-gradient(90deg, #a67c52 60%, #4a4a4a 120%);
-  color: #fff;
-  border: none;
-  border-radius: 7px;
-  padding: 0.7em 2.2em;
-  font-size: 1.1em;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 3px 8px #2c2c2c19;
-  transition: background 0.22s, transform 0.18s, box-shadow 0.21s;
-  margin-top: 0.3em;
-}
-
-.btn-enviar:hover,
-.btn-enviar:focus,
-.formulario button[type="submit"]:hover {
-  background: linear-gradient(90deg, #8a633f 70%, #2c2c2c 120%);
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 18px #a67c5225;
-}
-
-.form-feedback.success {
-  color: #1c851c;
-}
-
-.form-feedback.error {
-  color: #c82727;
-}
-
-/* Tarjeta lateral con datos de contacto y links */
-.datos {
-  background: #fcfcfc;
-  border-radius: 16px;
-  box-shadow: 0 3px 16px #a67c5214;
-  padding: 1.5em 2em;
-  min-width: 240px;
-  max-width: 340px;
-  flex: 1;
-}
-
-.datos h2 {
-  font-size: 1.2em;
-  margin-bottom: 0.7em;
-}
-
-.icon-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1em 0;
-}
-
-.icon-list li {
-  font-size: 1.08em;
-  margin-bottom: 0.7em;
-  display: flex;
-  align-items: center;
-  gap: 0.7em;
-}
-
-.icon-list a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.15s;
-}
-
-.icon-list a:hover {
-  color: var(--wood-accent);
-}
-
-.mapa-contacto {
-  border-radius: 12px;
-  box-shadow: 0 2px 10px #2c2c2c13;
-  margin-top: 1.2em;
-  width: 100%;
-  min-height: 180px;
-  border: none;
-}
-
-/* Íconos de redes (WhatsApp/Instagram) desde CDN de simple-icons */
-.icon-wsp {
-  display: inline-block;
-  width: 1.25em;
-  height: 1.25em;
-  background: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg') no-repeat center/contain;
-  vertical-align: middle;
-  margin-right: 0.35em;
-  filter: drop-shadow(0 0 2px #25D366);
-}
-
-.icon-ig {
-  display: inline-block;
-  width: 1.25em;
-  height: 1.25em;
-  background: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg') no-repeat center/contain;
-  vertical-align: middle;
-  margin-right: 0.35em;
-  filter: drop-shadow(0 0 2px #e1306c);
-}
-
-/* Indicador de carga circular para operaciones async */
-.spinner {
-  width: 24px;
-  height: 24px;
-  border: 3px solid var(--slate);
-  border-top-color: var(--wood-accent);
-  border-radius: 50%;
-  animation: spin 0.7s linear infinite;
-}
-
-/* Animación del spinner */
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.form-feedback {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
-
-
-/* Estilo destacado para citas/bios en sección "historia" */
-.historia .persona {
-  margin: 0.5rem 0;
-  padding: 0.25rem 0.5rem;
-  border-left: 2px solid var(--wood-accent);
-  background: var(--silver);
-  font-style: italic;
-  color: var(--charcoal);
-  font-size: 0.75rem;
-  line-height: 1.3;
-}
-
-.historia .persona h5 {
-  margin: 0;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--charcoal);
-}
-
-.historia .persona h6 {
-  margin: 0;
-  font-size: 0.7rem;
-  font-style: normal;
-  color: var(--slate);
-  opacity: 0.8;
-}
-
-/* Botón flotante para volver arriba */
-#scroll-top {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--wood-accent);
-  color: var(--text-light);
-  border: none;
-  border-radius: 20%;
-  font-size: 1.5rem;
-  line-height: 1;
-  text-align: center;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-  z-index: 1001;
-  opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    background 0.3s ease;
-}
-
-#scroll-top.show {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-#scroll-top:hover {
-  background: var(--slate);
-  transform: translateY(-2px);
-}
-
-/* Utilidad para animar entrada suave de bloques */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Modal para ampliar imágenes de la galería */
-.modal-img {
-  display: none;
-  position: fixed;
-  z-index: 12000;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(44, 44, 44, 0.93);
-  align-items: center;
-  justify-content: center;
-  animation: modalFadeIn 0.28s cubic-bezier(.43, .8, .43, 1);
-}
-
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.modal-img img {
-  max-width: 96vw;
-  max-height: 84vh;
-  border-radius: 12px;
-  box-shadow: 0 8px 42px #0009;
-  margin: auto;
-  display: block;
-  background: #fafafc;
-  transition: box-shadow .22s;
-}
-
-.modal-close {
-  position: absolute;
-  top: 2.4rem;
-  right: 3vw;
-  font-size: 2.5rem;
-  color: #fff;
-  cursor: pointer;
-  font-weight: bold;
-  text-shadow: 0 2px 10px #222, 0 1px 4px #000a;
-  z-index: 1;
-  transition: color 0.13s;
-  user-select: none;
-}
-
-.modal-close:hover {
-  color: var(--wood-accent);
-}
-
-@media (max-width: 900px) {
-  .modal-close {
-    top: 1.1rem;
-    right: 2vw;
-    font-size: 2rem;
-  }
-}
-
-/* Pie de página sencillo con contraste alto */
-footer {
-  background-color: var(--charcoal);
-  text-align: center;
-  padding: var(--esp) 0;
-  color: var(--text-light);
-  margin-top: calc(var(--esp) * 2);
-}
-
-/* Responsive general para contacto/beneficios en pantallas medias */
-@media (max-width: 900px) {
-  .contacto {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1.5rem;
-  }
-
-  .form-container,
-  .datos {
-    max-width: 100%;
-  }
-
-=======
 /* Tema oscuro para texto de beneficios */
 .dark-theme .beneficio h3 {
   color: var(--text-primary);
@@ -1554,17 +980,13 @@ footer {
 }
 
 @media (max-width: 900px) {
->>>>>>> 9942fca (Initial commit: project files)
   .beneficios {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin: 1.2rem 0;
-<<<<<<< HEAD
-    padding: 1.2rem 0 0.8rem 0;
-=======
+
     padding: 0.7rem;
->>>>>>> 9942fca (Initial commit: project files)
     background: #fafafc;
     border-radius: 12px;
     width: 100%;
@@ -1574,118 +996,14 @@ footer {
     min-width: 0;
     box-sizing: border-box;
     text-align: center;
-<<<<<<< HEAD
-    padding: 0.7rem 0.2rem;
-=======
+
     padding: 0.7rem;
->>>>>>> 9942fca (Initial commit: project files)
     max-width: 100%;
   }
 }
 
-<<<<<<< HEAD
-/* Navegación móvil y ajustes de columnas en pantallas pequeñas */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: flex;
-    border: none;
-  }
 
-  .nav-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .nav-menu {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    left: 0;
-    right: 0;
-    width: 100vw;
-  }
-
-  .nav-menu li {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .nav-menu li a {
-    width: 100%;
-    text-align: center;
-  }
-
-  .columnas,
-  .personas,
-  .servicio,
-  .contacto {
-    flex-direction: column;
-  }
-
-  .galeria {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.6rem;
-  }
-
-  .formulario {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Navegación de escritorio: menú siempre visible y centrado */
-@media (min-width: 769px) {
-  .nav-toggle {
-    display: none;
-  }
-
-  .nav-menu {
-    max-height: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    position: static;
-    overflow: visible;
-    background: none;
-    display: flex !important;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
-  }
-  .nav-container {
-    justify-content: center;
-  }
-}
-
-/* Transiciones comunes para enlaces de menú y botones */
-.nav-menu li a,
-.btn,
-.btn-enviar {
-  display: inline-block;
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
-}
-
-/* Accesibilidad: respeta usuarios con animaciones reducidas */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-    animation: none !important;
-  }
-}
-
-.nav-menu li a:hover,
-.btn:hover,
-.btn-enviar:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-=======
->>>>>>> 9942fca (Initial commit: project files)
-/* Componente Slider: envoltorio y tamaños base */
+/* Componente Slider: envoltorio y tamaÃ±os base */
 .slider-holder {
   max-width: 680px;
   margin: 2rem auto;
@@ -1698,19 +1016,13 @@ footer {
   overflow: hidden;
   border-radius: 18px;
   box-shadow: 0 3px 18px #2c2c2c22;
-<<<<<<< HEAD
-  background: #fff;
-  max-width: 480px;   /* Ajusta según gusto, ancho máximo */
-  margin: 2rem auto;
-  min-height: 360px;  /* Altura mínima si lo necesitas */
-=======
+
   background: transparent;
   max-width: 480px;
-  /* Ajusta según gusto, ancho máximo */
+  /* Ajusta segÃºn gusto, ancho mÃ¡ximo */
   margin: 2rem auto;
   min-height: 360px;
-  /* Altura mínima si lo necesitas */
->>>>>>> 9942fca (Initial commit: project files)
+  /* Altura mÃ­nima si lo necesitas */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1719,30 +1031,22 @@ footer {
 /* Pista del slider que se desplaza horizontalmente */
 .slider-track {
   display: flex;
-<<<<<<< HEAD
-  transition: transform 0.5s cubic-bezier(.77, 0, .18, 1);
-=======
+
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.18, 1);
->>>>>>> 9942fca (Initial commit: project files)
   will-change: transform;
   width: 100%;
   align-items: center;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 9942fca (Initial commit: project files)
+
 .slider-track img {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 16px;
-<<<<<<< HEAD
-  background: #eaeaea;
-=======
+
   background: transparent;
->>>>>>> 9942fca (Initial commit: project files)
   user-select: none;
   pointer-events: none;
   transition: filter 0.2s;
@@ -1795,7 +1099,7 @@ footer {
   right: 0.7rem;
 }
 
-/* Indicadores (puntos) de posición del slider */
+/* Indicadores (puntos) de posiciÃ³n del slider */
 .slider-dots {
   display: flex;
   justify-content: center;
@@ -1837,19 +1141,15 @@ footer {
   }
 }
 
-/* Ajustes del slider en móviles medianos: imágenes y feedback táctil */
+/* Ajustes del slider en mÃ³viles medianos: imÃ¡genes y feedback tÃ¡ctil */
 @media (max-width: 650px) {
   .slider-track img {
     aspect-ratio: 3 / 2;
     min-height: 160px;
     max-height: 400px;
-<<<<<<< HEAD
-    object-fit: contain !important;
-    background: #f7f7f7;
-=======
+
     object-fit: cover;
     background: transparent;
->>>>>>> 9942fca (Initial commit: project files)
   }
 
   @keyframes btnBounce {
@@ -1871,24 +1171,21 @@ footer {
   }
 
   .slider-btn.animate-tap {
-<<<<<<< HEAD
-    animation: btnBounce 0.28s cubic-bezier(.46, 1.67, .53, .88) both;
-=======
+
     animation: btnBounce 0.28s cubic-bezier(0.46, 1.67, 0.53, 0.88) both;
->>>>>>> 9942fca (Initial commit: project files)
   }
 
   .slider-btn:hover,
   .slider-btn:focus,
   .slider-btn:active {
-    /* No hacer scale ni fondo distinto en móvil */
+    /* No hacer scale ni fondo distinto en mÃ³vil */
     background: var(--wood-accent);
     opacity: 0.85;
     transform: translateY(-50%);
   }
 }
 
-/* Ajustes del slider en móviles pequeños */
+/* Ajustes del slider en mÃ³viles pequeÃ±os */
 @media (max-width: 480px) {
   .slider-holder {
     max-width: 100vw;
@@ -1899,13 +1196,9 @@ footer {
     aspect-ratio: 1 / 1;
     min-height: 170px;
     max-height: 480px;
-<<<<<<< HEAD
-    object-fit: contain !important;
-    background: #f7f7f7;
-=======
+
     object-fit: cover;
     background: transparent;
->>>>>>> 9942fca (Initial commit: project files)
   }
 
   .slider-btn {
@@ -1914,8 +1207,7 @@ footer {
     height: 2rem;
   }
 }
-<<<<<<< HEAD
-=======
+
 
 
 
@@ -2316,13 +1608,13 @@ footer {
 
 
 /* ===========GALERIA========== */
-/* PÁGINA GALERÍA - DISEÑO CON FILTROS Y DESCRIPCIONES */
+/* PÃGINA GALERÃA - DISEÃ‘O CON FILTROS Y DESCRIPCIONES */
 
 .galeria-page {
   padding: 2rem 0;
 }
 
-/* Header de la galería */
+/* Header de la galerÃ­a */
 .galeria-header {
   text-align: center;
   padding: 2rem 1rem;
@@ -2385,7 +1677,7 @@ footer {
   font-size: 1.3rem;
 }
 
-/* Galería de imágenes con descripciones */
+/* GalerÃ­a de imÃ¡genes con descripciones */
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -2480,7 +1772,7 @@ footer {
   pointer-events: none;
 }
 
-/* En móviles, mostrar siempre las descripciones */
+/* En mÃ³viles, mostrar siempre las descripciones */
 @media (max-width: 768px) {
   .galeria-descripcion {
     transform: translateY(0);
@@ -2574,7 +1866,7 @@ footer {
   }
 }
 
-/* Modal para ampliar imágenes de la galería */
+/* Modal para ampliar imÃ¡genes de la galerÃ­a */
 .modal-img {
   display: none;
   position: fixed;
@@ -2623,7 +1915,7 @@ footer {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   outline: none;
-  /* Marco estilo botones de la página */
+  /* Marco estilo botones de la pÃ¡gina */
   width: 3rem;
   height: 3rem;
   display: flex;
@@ -2646,7 +1938,7 @@ footer {
   outline: none;
 }
 
-/* Tema oscuro para el botón de cerrar */
+/* Tema oscuro para el botÃ³n de cerrar */
 .dark-theme .modal-close {
   background: var(--bg-secondary);
   border-color: var(--accent-rust);
@@ -2685,7 +1977,7 @@ footer {
 
 /* =============CONTACTO============= */
 
-/* Sección de contacto: formulario + datos + mapa */
+/* SecciÃ³n de contacto: formulario + datos + mapa */
 .contacto {
   display: flex;
   flex-wrap: wrap;
@@ -2798,7 +2090,7 @@ footer {
   font-weight: 500;
 }
 
-/* Botón enviar del formulario y estilos de hover/focus */
+/* BotÃ³n enviar del formulario y estilos de hover/focus */
 .btn-enviar,
 .formulario button[type="submit"] {
   background: linear-gradient(90deg, #a67c52 60%, #4a4a4a 120%);
@@ -2920,7 +2212,7 @@ footer {
   border: none;
 }
 
-/* Íconos de redes (WhatsApp/Instagram) desde CDN de simple-icons */
+/* Ãconos de redes (WhatsApp/Instagram) desde CDN de simple-icons */
 .icon-wsp {
   display: inline-block;
   width: 1.25em;
@@ -2957,7 +2249,7 @@ footer {
   display: inline-block;
 }
 
-/* Animación del spinner */
+/* AnimaciÃ³n del spinner */
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -3029,4 +2321,5 @@ footer {
 .dark-theme .icon-list a:hover {
   color: var(--accent-rust);
 }
->>>>>>> 9942fca (Initial commit: project files)
+
+

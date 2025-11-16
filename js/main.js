@@ -1,34 +1,7 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // Espera a que todo el DOM esté cargado antes de ejecutar el script
+﻿document.addEventListener('DOMContentLoaded', function () {
+  // Espera a que todo el DOM estÃ© cargado antes de ejecutar el script
 
-<<<<<<< HEAD
-  // 1. Toggle de menú
-  var btn = document.querySelector('.nav-toggle');          // Selecciona el botón que abre/cierra el menú
-  var menu = document.querySelector('.nav-menu');           // Selecciona el contenedor del menú
-  if (btn && menu) {                                        // Solo continúa si ambos elementos existen
-    btn.setAttribute('aria-expanded', 'false');             // Inicializa atributo ARIA como "cerrado"
 
-    function toggleMenu(e) {                                // Función para alternar el estado del menú
-      e.preventDefault();                                   // Evita comportamiento por defecto del enlace
-      var abierto = btn.getAttribute('aria-expanded') === 'true'; // Comprueba si el menú está abierto
-      btn.setAttribute('aria-expanded', String(!abierto));  // Cambia el estado ARIA
-      menu.classList.toggle('nav-menu--visible');           // Muestra u oculta el menú
-      btn.classList.toggle('open');                         // Cambia clase para el icono de "X"
-      btn.blur();                                           // Quita el foco del botón
-    }
-    btn.addEventListener('click', toggleMenu);              // Asocia toggleMenu al evento click
-    btn.addEventListener('touchend', toggleMenu);           // Asocia toggleMenu al evento touchend
-
-    function cerrarSiFuera(e) {                             // Función para cerrar el menú al hacer clic fuera
-      if (!btn.classList.contains('open')) return;          // Si ya está cerrado, no hace nada
-      if (btn.contains(e.target) || menu.contains(e.target)) return; // Si clic es dentro del menú, no cierra
-      btn.setAttribute('aria-expanded', 'false');           // Marca ARIA como cerrado
-      menu.classList.remove('nav-menu--visible');           // Oculta el menú
-      btn.classList.remove('open');                         // Vuelve el icono a estado inicial
-    }
-    document.addEventListener('click', cerrarSiFuera);      // Detecta clic global para cerrar menú
-    document.addEventListener('touchend', cerrarSiFuera);   // Detecta touch fuera para cerrar menú
-=======
   // === Theme toggle: Light / Dark ===
   var themeBtn = document.querySelector('.theme-toggle');
   var themeThumb = themeBtn ? themeBtn.querySelector('.toggle-thumb') : null;
@@ -55,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (themeThumb) {
       themeThumb.classList.remove('light', 'dark');
       themeThumb.classList.add(theme);
-      themeThumb.textContent = theme === 'dark' ? '🌙' : '☀️';
+      themeThumb.textContent = theme === 'dark' ? 'ðŸŒ™' : 'â˜€ï¸';
     }
 
     try { localStorage.setItem('theme', theme); } catch (e) { /* ignore */ }
@@ -86,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initTheme();
 
 
-  // 1. Toggle de menú (si existe)
+  // 1. Toggle de menÃº (si existe)
   const btn = document.querySelector('.nav-toggle');
   const menu = document.querySelector('.nav-menu');
 
@@ -153,29 +126,28 @@ document.addEventListener('DOMContentLoaded', function () {
     const enlaces = menu ? menu.querySelectorAll('a') : [];
     enlaces.forEach(enlace => {
       enlace.addEventListener('click', () => {
-        // Solo cerrar si el menú está visible (modo móvil)
+        // Solo cerrar si el menÃº estÃ¡ visible (modo mÃ³vil)
         if (window.innerWidth < 769) {
           cerrarMenu();
         }
       });
     });
-    // Usar solo click para evitar duplicación de eventos en móvil
+    // Usar solo click para evitar duplicaciÃ³n de eventos en mÃ³vil
     btn.addEventListener('click', toggleMenu);
     backdrop.addEventListener('click', cerrarMenu, true);
     document.addEventListener('click', cerrarSiFuera, true);
->>>>>>> 9942fca (Initial commit: project files)
   }
 
   // 2. Fade-in al hacer scroll
   var elementos = document.querySelectorAll('.fade-in');    // Selecciona todos los elementos con clase fade-in
   var observer = new IntersectionObserver(function (entries, obs) {
-    entries.forEach(function (entry, i) {                    // Recorre cada intersección detectada
-      if (entry.isIntersecting) {                           // Si el elemento está en vista
+    entries.forEach(function (entry, i) {                    // Recorre cada intersecciÃ³n detectada
+      if (entry.isIntersecting) {                           // Si el elemento estÃ¡ en vista
         var retraso = entry.target.dataset.delay             // Comprueba si tiene retraso personalizado
           ? entry.target.dataset.delay + 's'
           : (i * 0.15) + 's';                                // Si no, calcula retraso escalonado
         entry.target.style.transitionDelay = retraso;       // Aplica el retraso al estilo
-        entry.target.classList.add('visible');              // Añade clase para iniciar la animación
+        entry.target.classList.add('visible');              // AÃ±ade clase para iniciar la animaciÃ³n
         obs.unobserve(entry.target);                        // Deja de observar este elemento
       }
     });
@@ -187,51 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(el);
   });
 
-<<<<<<< HEAD
-  // 4. Formulario con Formspree
-  var form = document.getElementById('contact-form');       // Selecciona el formulario de contacto
-  var spinner = document.getElementById('form-spinner');    // Selecciona el spinner de carga
-  var feedback = document.getElementById('form-feedback');  // Selecciona el área de mensajes
-  if (form && spinner && feedback) {
-    form.addEventListener('submit', function (e) {           // Al enviar el formulario
-      e.preventDefault();                                   // Evita recarga de página
-      feedback.textContent = '';                            // Limpia mensajes previos
-      feedback.className = 'form-feedback';                 // Resetea clases CSS
 
-      if (!form.checkValidity()) {                          // Si faltan campos obligatorios
-        feedback.textContent = 'Completa todos los campos obligatorios.'; // Mensaje de error
-        feedback.classList.add('error');
-        return;
-      }
-
-      spinner.hidden = false;                               // Muestra el spinner
-      form.querySelector('button[type=submit]').disabled = true; // Deshabilita el botón
-
-      fetch(form.action, {                                  // Envía datos con fetch
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      })
-        .then(function (res) {
-          if (!res.ok) {                                      // Si no es respuesta 200
-            return res.json().then(function (json) {
-              throw new Error(json.error || 'Error al enviar'); // Lanza error
-            });
-          }
-          feedback.textContent = '¡Mensaje enviado con éxito!'; // Mensaje de éxito
-          feedback.classList.add('success');
-          form.reset();                                       // Limpia el formulario
-        })
-        .catch(function () {
-          feedback.textContent = 'Hubo un problema. Intenta más tarde.'; // Mensaje de fallo
-          feedback.classList.add('error');
-        })
-        .finally(function () {
-          spinner.hidden = true;                              // Oculta el spinner
-          form.querySelector('button[type=submit]').disabled = false; // Reactiva botón
-        });
-    });
-=======
   const form = document.getElementById("contact-form");
   const spinner = document.getElementById("form-spinner");
   const feedback = document.getElementById("form-feedback");
@@ -240,10 +168,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Solo inicializar la parte del formulario si todos los elementos existen (contacto.html)
   if (form && spinner && feedback && !listenerAdded) {
 
-    // ======= CONFIG: Resend API (⚠️ Esto expone la API key si se publica en el cliente) ========
-    // El usuario pidió evitar un backend; esto funciona desde el cliente, PERO expone la API KEY.
-    // Si es posible, usar una función serverless / backend para ocultar la clave.
-    // API Key y email provistos por el usuario (colócalos aquí solo si entiendes el riesgo):
+    // ======= CONFIG: Resend API (âš ï¸ Esto expone la API key si se publica en el cliente) ========
+    // El usuario pidiÃ³ evitar un backend; esto funciona desde el cliente, PERO expone la API KEY.
+    // Si es posible, usar una funciÃ³n serverless / backend para ocultar la clave.
+    // API Key y email provistos por el usuario (colÃ³calos aquÃ­ solo si entiendes el riesgo):
     const RESEND_API_KEY = 're_S7mCzDkS_BU7LmJbUzviEW4jLm38WCtY3';
     const RESEND_FROM = 'onboarding@resend.dev';
     const RESEND_TO = 'matiascerolenii@gmail.com';
@@ -260,12 +188,8 @@ document.addEventListener('DOMContentLoaded', function () {
       submitBtn.disabled = true;
       submitBtn.classList.add('loading');
 
-      feedback.textContent = "";
-      feedback.className = "form-feedback";
 
       if (!form.checkValidity()) {
-        feedback.textContent = "Completa todos los campos obligatorios.";
-        feedback.className = "form-feedback error show";
         submitBtn.disabled = false;
         submitBtn.classList.remove('loading');
         isSubmitting = false;
@@ -294,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <ul>
           <li><strong>Nombre:</strong> ${safeHtml(name)}</li>
           <li><strong>Email:</strong> ${safeHtml(email)}</li>
-          <li><strong>Teléfono:</strong> ${safeHtml(phone)}</li>
+          <li><strong>TelÃ©fono:</strong> ${safeHtml(phone)}</li>
         </ul>
         <hr>
         <p><strong>Mensaje:</strong></p>
@@ -308,8 +232,8 @@ document.addEventListener('DOMContentLoaded', function () {
         html: emailHtml,
       };
 
-      // Intento de envío directo a Resend
-      // Nota: Expondrá la API KEY en el cliente; ver SECURITY.md para alternativas
+      // Intento de envÃ­o directo a Resend
+      // Nota: ExpondrÃ¡ la API KEY en el cliente; ver SECURITY.md para alternativas
       fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
@@ -331,31 +255,24 @@ document.addEventListener('DOMContentLoaded', function () {
               throw new Error(json.message || "Error al enviar");
             });
           }
-          feedback.textContent = "¡Mensaje enviado con éxito!";
-          feedback.className = "form-feedback success show";
           form.reset();
-          // Ocultar mensaje de éxito después de 3 segundos
+          // Ocultar mensaje de Ã©xito despuÃ©s de 3 segundos
           setTimeout(() => {
-            feedback.textContent = "";
-            feedback.className = "form-feedback";
           }, 3000);
 
-          // Habilitar botón inmediatamente
+          // Habilitar botÃ³n inmediatamente
           const submitBtn = form.querySelector("button[type=submit]");
           submitBtn.disabled = false;
           submitBtn.classList.remove('loading');
         })
         .catch((error) => {
           // Detectar errores por CORS/Network y ofrecer fallback a mailto
-          let message = error.message || "Hubo un problema. Intenta más tarde.";
+          let message = error.message || "Hubo un problema. Intenta mÃ¡s tarde.";
           const failedToFetch = message.toLowerCase().includes('failed to fetch') || message.toLowerCase().includes('networkrequestfailed') || message.toLowerCase().includes('network error');
           if (failedToFetch) {
-            const mailto = `mailto:${RESEND_TO}?subject=${encodeURIComponent('Contacto desde web - ' + (name || email))}&body=${encodeURIComponent('Nombre: ' + name + '\nEmail: ' + email + '\nTeléfono: ' + phone + '\n\nMensaje:\n' + message)}`;
-            feedback.innerHTML = `No se pudo enviar desde el navegador (probable bloqueo por CORS). Puedes <a href="${mailto}">enviar con tu cliente de correo</a> o configurar un backend/serverless para enviar desde el servidor.`;
+            const mailto = `mailto:${RESEND_TO}?subject=${encodeURIComponent('Contacto desde web - ' + (name || email))}&body=${encodeURIComponent('Nombre: ' + name + '\nEmail: ' + email + '\nTelÃ©fono: ' + phone + '\n\nMensaje:\n' + message)}`;
           } else {
-            feedback.textContent = message;
           }
-          feedback.className = "form-feedback error show";
         })
         .finally(() => {
           const submitBtn = form.querySelector("button[type=submit]");
@@ -367,39 +284,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     form.addEventListener("submit", handleSubmit);
     listenerAdded = true;
->>>>>>> 9942fca (Initial commit: project files)
   }
 
-  // 5. Botón “volver arriba”
-  var btnTop = document.getElementById('scroll-top');       // Selecciona el botón scroll-top
+  // 5. BotÃ³n â€œvolver arribaâ€
+  var btnTop = document.getElementById('scroll-top');       // Selecciona el botÃ³n scroll-top
   if (btnTop) {
     window.addEventListener('scroll', function () {          // Al hacer scroll
-      if (window.scrollY > 100)                             // Si se baja más de 100px
-        btnTop.classList.add('show');                       // Muestra el botón
+      if (window.scrollY > 100)                             // Si se baja mÃ¡s de 100px
+        btnTop.classList.add('show');                       // Muestra el botÃ³n
       else
-        btnTop.classList.remove('show');                    // Oculta el botón
+        btnTop.classList.remove('show');                    // Oculta el botÃ³n
     });
-    btnTop.addEventListener('click', function () {            // Al hacer clic en el botón
+    btnTop.addEventListener('click', function () {            // Al hacer clic en el botÃ³n
       window.scrollTo({ top: 0, behavior: 'smooth' });       // Hace scroll suave hasta arriba
     });
   }
 
-<<<<<<< HEAD
-  // 6. Mostrar menú en desktop
-  function actualizarMenuDesktop() {                        // Ajusta visibilidad según ancho
-    if (!menu) return;                                      // Si no hay menú, sale
-    if (window.innerWidth >= 769)                           // Si es desktop (>=769px)
-      menu.classList.add('nav-menu--visible');              // Muestra el menú
-    else
-      menu.classList.remove('nav-menu--visible');           // Oculta el menú en móvil
-  }
-  actualizarMenuDesktop();                                  // Llama al cargar
-  window.addEventListener('resize', actualizarMenuDesktop); // Repite al cambiar tamaño
 
-=======
->>>>>>> 9942fca (Initial commit: project files)
-  // 7. Modal de galería
-  var gal = document.querySelector('.galeria');             // Selecciona el contenedor de imágenes
+  // 7. Modal de galerÃ­a
+  var gal = document.querySelector('.galeria');             // Selecciona el contenedor de imÃ¡genes
   if (gal) {
     var modal = document.querySelector('.modal-img');       // Intenta obtener modal existente
     if (!modal) {                                           // Si no existe, lo crea
@@ -408,44 +311,41 @@ document.addEventListener('DOMContentLoaded', function () {
       modal.innerHTML = '\
         <span class="modal-close" title="Cerrar">&times;</span>\
         <img src="" alt="Imagen ampliada">';
-      document.body.appendChild(modal);                     // Lo añade al body
+      document.body.appendChild(modal);                     // Lo aÃ±ade al body
     }
     var imgModal = modal.querySelector('img');              // Imagen dentro del modal
-    var cerrarBtn = modal.querySelector('.modal-close');    // Botón de cerrar modal
+    var cerrarBtn = modal.querySelector('.modal-close');    // BotÃ³n de cerrar modal
 
-    gal.addEventListener('click', function (e) {             // Al hacer clic en la galería
-      if (e.target.tagName !== 'IMG') return;               // Solo imágenes abren modal
+    gal.addEventListener('click', function (e) {             // Al hacer clic en la galerÃ­a
+      if (e.target.tagName !== 'IMG') return;               // Solo imÃ¡genes abren modal
       imgModal.src = e.target.src;                          // Copia la URL de la imagen
       modal.style.display = 'flex';                         // Muestra el modal
-      setTimeout(function () { modal.classList.add('open'); }, 10); // Añade clase de animación
+      setTimeout(function () { modal.classList.add('open'); }, 10); // AÃ±ade clase de animaciÃ³n
     });
 
-    function closeModal(e) {                                // Función para cerrar modal
+    function closeModal(e) {                                // FunciÃ³n para cerrar modal
       if (e.target === modal || e.target === cerrarBtn) {
-        modal.classList.remove('open');                     // Quita la clase de animación
+        modal.classList.remove('open');                     // Quita la clase de animaciÃ³n
         setTimeout(function () { modal.style.display = 'none'; }, 200); // Oculta tras animar
       }
     }
     modal.addEventListener('click', closeModal);            // Clic en fondo cierra modal
-    cerrarBtn.addEventListener('click', closeModal);        // Clic en "×" cierra modal
+    cerrarBtn.addEventListener('click', closeModal);        // Clic en "Ã—" cierra modal
     document.addEventListener('keydown', function (e) {      // Esc cierra modal
-<<<<<<< HEAD
-      if (e.key === 'Escape' && modal.style.display === 'flex') closeModal(e);
-=======
+
       if (e.key === 'Escape' && modal.style.display === 'flex') closeModal({ target: modal });
->>>>>>> 9942fca (Initial commit: project files)
     });
   }
 
-  // 8. Slider de galería
+  // 8. Slider de galerÃ­a
   var slider = document.getElementById('galeria-slider');   // Selecciona el slider
   if (slider) {
-    var track = slider.querySelector('.slider-track');      // Pista donde van las imágenes
-    var imgs = slider.querySelectorAll('img');              // Todas las imágenes
-    var prev = slider.querySelector('.slider-btn.prev');    // Botón anterior
-    var next = slider.querySelector('.slider-btn.next');    // Botón siguiente
+    var track = slider.querySelector('.slider-track');      // Pista donde van las imÃ¡genes
+    var imgs = slider.querySelectorAll('img');              // Todas las imÃ¡genes
+    var prev = slider.querySelector('.slider-btn.prev');    // BotÃ³n anterior
+    var next = slider.querySelector('.slider-btn.next');    // BotÃ³n siguiente
     var dots = document.getElementById('slider-dots');      // Contenedor de puntos
-    var index = 0;                                          // Índice de imagen actual
+    var index = 0;                                          // Ãndice de imagen actual
 
     imgs.forEach(function (_, i) {                           // Crea un punto por imagen
       var dot = document.createElement('button');
@@ -461,17 +361,7 @@ document.addEventListener('DOMContentLoaded', function () {
       dotButtons.forEach(function (d, i) {
         d.classList.toggle('active', i === index);          // Activa punto actual
       });
-<<<<<<< HEAD
-      prev.disabled = index === 0;                          // Deshabilita prev en inicio
-      next.disabled = index === imgs.length - 1;            // Deshabilita next al final
-    }
-    function irA(i) {                                       // Función para ir a índice i
-      index = Math.max(0, Math.min(i, imgs.length - 1));    // Limita rango válido
-      actualizarSlider();                                   // Refresca vista
-    }
-    prev.addEventListener('click', function () { irA(index - 1); }); // Prev
-    next.addEventListener('click', function () { irA(index + 1); }); // Next
-=======
+
     }
     const irA = (i) => {
       // Carrusel infinito: si llega al final, vuelve al inicio y viceversa
@@ -487,12 +377,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     prev.addEventListener('click', () => irA(index - 1)); // Prev
     next.addEventListener('click', () => irA(index + 1)); // Next
->>>>>>> 9942fca (Initial commit: project files)
 
-    // Swipe en móviles
+    // Swipe en mÃ³viles
     var startX = 0;
     track.addEventListener('touchstart', function (e) {
-      startX = e.touches[0].clientX;                        // Guarda posición inicial
+      startX = e.touches[0].clientX;                        // Guarda posiciÃ³n inicial
     });
     track.addEventListener('touchend', function (e) {
       var dx = e.changedTouches[0].clientX - startX;        // Calcula desplazamiento
@@ -503,59 +392,42 @@ document.addEventListener('DOMContentLoaded', function () {
     actualizarSlider();                                     // Inicializa el slider
   }
 
-  // 9. Animación “tap” en botones (solo móvil)
+  // 9. AnimaciÃ³n â€œtapâ€ en botones (solo mÃ³vil)
   var sliderBtns = document.querySelectorAll('.slider-btn'); // Selecciona todos los botones del slider
   sliderBtns.forEach(function (b) {
-    b.addEventListener('pointerdown', function () {           // Al tocar el botón
-      if (window.matchMedia('(max-width:650px)').matches) {  // Solo en pantallas pequeñas
+    b.addEventListener('pointerdown', function () {           // Al tocar el botÃ³n
+      if (window.matchMedia('(max-width:650px)').matches) {  // Solo en pantallas pequeÃ±as
         b.classList.remove('animate-tap');                   // Limpia clase si existe
-        void b.offsetWidth;                                  // Forza reflow para reiniciar animación
-        b.classList.add('animate-tap');                      // Añade clase para animar
+        void b.offsetWidth;                                  // Forza reflow para reiniciar animaciÃ³n
+        b.classList.add('animate-tap');                      // AÃ±ade clase para animar
       }
     });
     b.addEventListener('animationend', function () {
-      b.classList.remove('animate-tap');                     // Quita clase al terminar animación
+      b.classList.remove('animate-tap');                     // Quita clase al terminar animaciÃ³n
     });
     b.addEventListener('mouseup', function () {                // En PC, quita foco al soltar
       if (window.innerWidth >= 769) b.blur();
     });
   });
-<<<<<<< HEAD
-});
-// ——— Hover aleatorio para galería ———
-document.querySelectorAll('.galeria img').forEach(img => {
-  img.addEventListener('mouseenter', () => {
-    // Genera un ángulo aleatorio entre 1° y 2°
-    const rnd = Math.random() * 2 + 1;
-    // Decide si es positivo o negativo
-    const angle = (Math.random() < 0.5 ? -1 : 1) * rnd;
-    // Asigna la variable CSS para el rotate
-    img.style.setProperty('--rotate-angle', `${angle}deg`);
-  });
-  // Opcional: al salir, dejamos la variable en 0 para “deshacer” cualquier resto
-  img.addEventListener('mouseleave', () => {
-    img.style.setProperty('--rotate-angle', `0deg`);
-  });
-});
-=======
-  // ——— Hover aleatorio para galería ———
+
+  // â€”â€”â€” Hover aleatorio para galerÃ­a â€”â€”â€”
   var galImgs = document.querySelectorAll('.galeria img');
   galImgs.forEach(img => {
     img.addEventListener('mouseenter', () => {
-      // Genera un ángulo aleatorio entre 1° y 2°
+      // Genera un Ã¡ngulo aleatorio entre 1Â° y 2Â°
       const rnd = Math.random() * 2 + 1;
       // Decide si es positivo o negativo
       const angle = (Math.random() < 0.5 ? -1 : 1) * rnd;
       // Asigna la variable CSS para el rotate
       img.style.setProperty('--rotate-angle', `${angle}deg`);
     });
-    // Opcional: al salir, dejamos la variable en 0 para “deshacer” cualquier resto
+    // Opcional: al salir, dejamos la variable en 0 para â€œdeshacerâ€ cualquier resto
     img.addEventListener('mouseleave', () => {
       img.style.setProperty('--rotate-angle', `0deg`);
     });
   });
 
-  // === Filtrado de galería ===
+  // === Filtrado de galerÃ­a ===
   var filtroBtns = document.querySelectorAll('.filtro-btn');
   var galItems = document.querySelectorAll('.galeria-item');
   var loadingMsg = document.querySelector('.loading');
@@ -576,7 +448,7 @@ document.querySelectorAll('.galeria img').forEach(img => {
       var cat = item.getAttribute('data-categoria') || 'todos';
       var mostrar = filter === 'todos' || cat === filter;
       item.style.display = mostrar ? '' : 'none';
-      // para animaciones: añadir/retirar clase
+      // para animaciones: aÃ±adir/retirar clase
       item.classList.toggle('visible', mostrar);
     });
   }
@@ -609,4 +481,5 @@ document.querySelectorAll('.galeria img').forEach(img => {
     });
   };
 });
->>>>>>> 9942fca (Initial commit: project files)
+
+
