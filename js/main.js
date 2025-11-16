@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
   // Espera a que todo el DOM estÃ© cargado antes de ejecutar el script
 
 
